@@ -41,13 +41,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 
   // Static assets to pass through
-  eleventyConfig.addPassthroughCopy("src/assets");
+  // eleventyConfig.addPassthroughCopy("src/assets");
 
   return {
     dir: {
       input: "src",
       includes: "_includes",
-      output: "dist",
+      output: "app/views/pages",
     },
     passthroughFileCopy: true,
     templateFormats: ["njk", "md"],

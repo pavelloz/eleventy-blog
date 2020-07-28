@@ -9,7 +9,12 @@
 .AppleDouble
 .LSOverride
 
+
+tmp
+.pos
+
 # build artefacts
-/dist
+/app
+
 /src/assets/style.css
 /src/_includes/style.min.css

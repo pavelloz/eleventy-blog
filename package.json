@@ -1,24 +1,25 @@
 {
-  "name": "mf-blogstarter",
+  "name": "eleventy-platformos-demo",
   "version": "1.0.0",
-  "description": "Eleventy + Tailwind CSS blog starter",
-  "author": "Marc FILLEUL",
+  "description": "Eleventy @ platformOS",
+  "author": "Pawel Kowalski",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcfilleul/mf-blogstarter"
+    "url": "https://github.com/pavelloz/eleventy-demo"
   },
   "browserslist": [
     "defaults"
   ],
   "scripts": {
-    "build": "del-cli dist && eleventy && npm-run-all build:css build:html",
+    "build": "del-cli app && eleventy && npm-run-all build:css build:html",
     "build:css": "cross-env NODE_ENV=production postcss src/_css/app.css -o src/_includes/css/style.min.css",
     "build:html": "cross-env ELEVENTY_ENV=production eleventy",
+    "postbuild": "cp -rf src/assets app/assets",
     "watch": "npm-run-all --parallel watch:css watch:html",
     "watch:css": "postcss src/_css/app.css -o src/assets/style.css --watch",
     "watch:html": "eleventy --serve --port=1982",
-    "dev": "del-cli dist && npm run watch"
+    "dev": "del-cli app && npm run watch"
   },
   "dependencies": {
     "@11ty/eleventy": "0.11.0",
